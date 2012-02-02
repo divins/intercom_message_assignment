@@ -1,0 +1,19 @@
+{
+  "name": "Block Intercom Messages",
+  "version": "0.0.1",
+  "description": "Blocks any message tagged as such.",
+  "permissions": [
+  ],
+  "background_page": "background.html",
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["http://intercom.io/apps/bguf1c8p/message_threads"],
+      "js" : ["jquery.min.js", "contentscript.js"]
+    },
+    {
+      "matches": ["http://intercom.io/apps/bguf1c8p/messages/*"],
+      "js" : ["jquery.min.js", "showscript.js"]
+    }
+  ]
+}
